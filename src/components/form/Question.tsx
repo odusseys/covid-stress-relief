@@ -8,7 +8,8 @@ import MultiSelectField from "./MultiSelectField"
 const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-size: 16px;
+  height: 180px;
 `
 
 const QuestionTitle = styled.h2``
@@ -33,13 +34,15 @@ export default function Question({
           value={
             options.find(o => o.value === (value.value as string)) ?? options[0]
           }
-          onChange={v => onChange({ id: id, type: "radio", value: v.value })}
+          onChange={v =>
+            onChange({ id: id as any, type: "radio", value: v.value })
+          }
         />
       ) : (
         <MultiSelectField
           options={options}
-          value={value as any}
-          onChange={value => onChange({ id: id, type: "multi", value })}
+          value={value.value as any}
+          onChange={value => onChange({ id: id as any, type: "multi", value })}
         />
       )}
     </QuestionContainer>

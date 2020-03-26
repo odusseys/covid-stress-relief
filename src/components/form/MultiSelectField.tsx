@@ -9,13 +9,14 @@ type Value = Record<string, boolean>
 
 export default function MultiSelectField({
   options,
-  value,
+  value = {},
   onChange,
 }: {
   options: Option[]
   value: Value
   onChange: (o: Value) => void
 }) {
+  console.log(value)
   return (
     <div>
       {options.map(o => (

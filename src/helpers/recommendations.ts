@@ -17,25 +17,25 @@ export function getRecommendations(
     if (a.value) {
       switch (a.id) {
         case QuestionType.BORED:
-          if (a.severity > 0) res[Recommendation.ACTIVITIES] = true
+          if (a.severity! > 0) res[Recommendation.ACTIVITIES] = true
           break
         case QuestionType.ISOLATION:
-          if (a.severity > 0) res[Recommendation.ISOLATION] = true
+          if (a.severity! > 0) res[Recommendation.ISOLATION] = true
           break
         case QuestionType.SICK:
-          if (a.severity > 0) res[Recommendation.DIAGNOSIS] = true
+          if (a.severity! > 0) res[Recommendation.DIAGNOSIS] = true
           break
         case QuestionType.PHYSICAL:
-          if (a.severity > 0) res[Recommendation.PHYSICAL] = true
+          if (a.severity! > 0) res[Recommendation.PHYSICAL] = true
           break
         case QuestionType.SLEEP:
-          if (a.severity > 0) res[Recommendation.SLEEP] = true
+          if (a.severity! > 0) res[Recommendation.SLEEP] = true
           break
         case QuestionType.RHYTHM:
-          if (a.severity > 0) res[Recommendation.RHYTHM] = true
+          if (a.severity! > 0) res[Recommendation.RHYTHM] = true
           break
         case QuestionType.NEWS:
-          if (BAD_NEWS_SOURCES.some(n => a.value[n]))
+          if (BAD_NEWS_SOURCES.some(n => a.value![n]))
             res[Recommendation.NEWS] = true
           break
         default:

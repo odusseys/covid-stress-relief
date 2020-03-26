@@ -30,10 +30,17 @@ type MultiQuestionType = QuestionType.NEWS
 
 export type Question = {
   message: string
-  options: { value: string; label: string; severity: number }[]
 } & (
-  | { id: RadioQuestionType; type: "radio" }
-  | { id: MultiQuestionType; type: "multi" }
+  | {
+      id: RadioQuestionType
+      type: "radio"
+      options: { value: string; label: string; severity: number }[]
+    }
+  | {
+      id: MultiQuestionType
+      type: "multi"
+      options: { value: string; label: string }[]
+    }
 )
 
 export type Answer =

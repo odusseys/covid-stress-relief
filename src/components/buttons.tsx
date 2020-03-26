@@ -13,6 +13,7 @@ export const Button = styled.button<{ aspect?: ButtonType }>`
   cursor: pointer;
   box-shadow: rgba(19, 45, 74, 0.12) 0px 0px 0px 0px,
     rgba(0, 0, 0, 0.2) 0px 2px 4px -2px;
+  font-size: inherit;
 
   ${({ aspect, theme }) => {
     switch (aspect ?? "secondary") {
