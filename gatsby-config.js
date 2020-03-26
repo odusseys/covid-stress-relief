@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -33,6 +33,18 @@ module.exports = {
       options: {
         fonts: [`open sans\:300,400,400i,500,600,700`],
         display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`fr`],
+        // language file path
+        defaultLanguage: `en`,
+        redirect: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

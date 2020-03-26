@@ -1,14 +1,8 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React, { ReactNode } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
+import Sticky from "../components/Sticky"
 
 import "./layout.css"
 
@@ -20,42 +14,53 @@ const Header = styled.header`
   font-size: 22px;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.primary};
+  @media (max-width: 600px) {
+    height: 60px;
+    font-size: 18px;
+  }
 `
 
 const DEFAUT_THEME = {
   colors: {
     primary: "blue",
-    secondary: "black",
+    secondary: "rgb(22, 22, 29)",
+    secondary70: "rgba(22, 22, 29, 0.7)",
   },
 }
+const Contents = styled.div`
+  display: flex;
+  padding: 32px 32px 0 32px;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 16px 16px 0 16px;
+  }
+`
+
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const Main = styled.main`
+  max-height: 100%;
+  overflow-y: auto;
+  @media (max-width: 600px) {
+    max-height: initial;
+    overflow-y: initial;
+  }
+`
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <>
-      <ThemeProvider theme={DEFAUT_THEME}>
-        <Header>CALM</Header>
-        <nav>todo</nav>
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0 1.0875rem 1.45rem`,
-          }}
-        >
-          <main>{children}</main>
-        </div>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={DEFAUT_THEME}>
+      <Header>CALM</Header>
+      <Nav>Nav todo</Nav>
+      <Contents>
+        <Sticky />
+        <Main>{children}</Main>
+      </Contents>
+    </ThemeProvider>
   )
 }
 
