@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Item from "./Item"
+import OutLink from "./OutLink"
 
 const Container = styled.section`
   width: 280px;
@@ -22,13 +23,9 @@ export default function Sticky() {
       <Item>
         <h2>Attestation de déplacement</h2>
         <p>Une attestation est obligatoire pour tous les déplacements.</p>
-        <a
-          href="https://www.interieur.gouv.fr/Actualites/L-actu-du-Ministere/Attestation-de-deplacement-derogatoire-et-justificatif-de-deplacement-professionnel"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <OutLink href="https://www.interieur.gouv.fr/Actualites/L-actu-du-Ministere/Attestation-de-deplacement-derogatoire-et-justificatif-de-deplacement-professionnel">
           Vous la trouverez sur le site du Ministère en suivant ce lien.
-        </a>
+        </OutLink>
       </Item>
     </Container>
   )

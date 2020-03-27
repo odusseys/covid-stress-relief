@@ -7,11 +7,10 @@ const Item = styled.div<{ small?: boolean }>`
   h2 {
     font-size: ${({ small }) => (small ? "12px" : "13px")};
     font-weight: 600;
-    margin-bottom: ${({ small }) => (small ? "16px" : "8px")};
+    margin-bottom: ${({ small }) => (small ? "8px" : "16px")};
   }
   p {
-    margin-bottom: ${({ small }) => (small ? "8px" : "4px")};
+    margin-bottom: ${({ small }) => (small ? "4px" : "8px")};
   }
-  font-size: 10px;
 `
 export default Item

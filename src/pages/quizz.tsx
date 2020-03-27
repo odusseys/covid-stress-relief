@@ -1,21 +1,23 @@
-import React, { useState } from "react"
+import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Answer } from "../helpers/types"
 import Quizz from "../components/quizz/Quizz"
-import Recommendations from "../components/quizz/Recommendations"
+import { getRecommendations } from "../helpers/recommendations"
+import { navigate } from "gatsby-plugin-intl"
+import qs from "query-string"
 
 const QuizzPage = () => {
-  const [answers, setAnswers] = useState<Answer[]>()
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Quizz" />
-      {answers ? (
-        <Recommendations answers={answers} />
-      ) : (
-        <Quizz onComplete={setAnswers} />
-      )}
+      <Quizz
+        onComplete={answers => {
+          const reco = getRecommendations(answers)
+          const q = qs.stringify(reco)
+          navigate(`/recommendations?${q}`)
+        }}
+      />
     </Layout>
   )
 }

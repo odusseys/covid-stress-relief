@@ -122,6 +122,10 @@ const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 32px;
+  @media (max-width: 600px) {
+    margin-bottom: 16px;
+  }
 `
 const PaginationItem = styled.div`
   flex: 1;

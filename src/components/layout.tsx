@@ -1,10 +1,9 @@
 import React, { ReactNode } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
-import Sticky from "../components/Sticky"
 
 import "./layout.css"
+import { Link } from "gatsby"
 
 const Header = styled.header`
   height: 80px;
@@ -114,14 +113,63 @@ const Wrapper = styled.div`
   flex-direction: column;
 `
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const NavItemContainer = styled.a<{ active: boolean }>`
+  display: block;
+  padding: 8px 16px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background: ${({ active, theme }) =>
+      active ? theme.colors.primary : "transparent"};
+  }
+`
+
+const NavItem = ({
+  to,
+  name,
+  location,
+  exact,
+}: {
+  to: string
+  name: string
+  location: Location
+  exact?: boolean
+}) => {
+  return (
+    <NavItemContainer
+      active={
+        exact ? location.pathname === to : location.pathname.startsWith(to)
+      }
+    >
+      <Link to={to}>{name}</Link>
+    </NavItemContainer>
+  )
+}
+
+const Layout = ({
+  children,
+  location,
+}: {
+  children: ReactNode
+  location: Location
+}) => {
   return (
     <ThemeProvider theme={DEFAUT_THEME}>
       <Wrapper>
-        <Header>CALM</Header>
-        <Nav>Nav todo</Nav>
+        <Header>
+          <Link to="/">CALM</Link>
+        </Header>
+        <Nav>
+          <NavItem to="/" name="Accueil" exact location={location} />
+          <NavItem to="/quizz" name="Questionnaire" location={location} />
+          <NavItem to="/resources" name="Ressources" location={location} />
+        </Nav>
         <Contents>
-          <Sticky />
           <MainContainer>
             <Main>{children}</Main>
           </MainContainer>

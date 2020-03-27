@@ -4,13 +4,14 @@ import styled from "styled-components"
 type Option = {
   value: string
   label: string
+  severity: number
 }
 
 const Label = styled.label`
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: 16px;
+  margin: 8px 16px;
   &:hover {
     opacity: 0.9;
   }
@@ -19,7 +20,7 @@ const Label = styled.label`
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: -16px;
+  margin: -8px -16px;
 `
 
 export default function RadioField({

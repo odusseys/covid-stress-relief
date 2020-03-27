@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 
 type Option = {
   value: string
@@ -6,6 +7,16 @@ type Option = {
 }
 
 type Value = Record<string, boolean>
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px -16px;
+`
+
+const Label = styled.label`
+  margin: 8px 16px;
+`
 
 export default function MultiSelectField({
   options,
@@ -16,11 +27,10 @@ export default function MultiSelectField({
   value: Value
   onChange: (o: Value) => void
 }) {
-  console.log(value)
   return (
-    <div>
+    <Container>
       {options.map(o => (
-        <label key={o.value}>
+        <Label key={o.value}>
           <input
             type="checkbox"
             value={o.value}
@@ -28,8 +38,8 @@ export default function MultiSelectField({
             onChange={e => onChange({ ...value, [o.value]: e.target.checked })}
           />
           {o.label}
-        </label>
+        </Label>
       ))}
-    </div>
+    </Container>
   )
 }

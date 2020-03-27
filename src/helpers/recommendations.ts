@@ -3,9 +3,8 @@ import { Answer, Recommendation, QuestionType } from "./types"
 const BAD_NEWS_SOURCES = [
   "friends",
   "onlineNews",
-  "tv",
+  "liveTv",
   "socialMedia",
-  "socialNetworks",
   "other",
 ]
 

@@ -1,11 +1,11 @@
 export enum Recommendation {
-  DIAGNOSIS,
-  NEWS,
-  PHYSICAL,
-  RHYTHM,
-  ISOLATION,
-  ACTIVITIES,
-  SLEEP,
+  DIAGNOSIS = "DIAGNOSIS",
+  NEWS = "NEWS",
+  PHYSICAL = "PHYSICAL",
+  RHYTHM = "RHYTHM",
+  ISOLATION = "ISOLATION",
+  ACTIVITIES = "ACTIVITIES",
+  SLEEP = "SLEEP",
 }
 
 export enum QuestionType {
@@ -28,20 +28,20 @@ type RadioQuestionType =
 
 type MultiQuestionType = QuestionType.NEWS
 
-export type Question = {
+export type RadioQuestion = {
   message: string
-} & (
-  | {
-      id: RadioQuestionType
-      type: "radio"
-      options: { value: string; label: string; severity: number }[]
-    }
-  | {
-      id: MultiQuestionType
-      type: "multi"
-      options: { value: string; label: string }[]
-    }
-)
+  id: RadioQuestionType
+  type: "radio"
+  options: { value: string; label: string; severity: number }[]
+}
+export type MultiQuestion = {
+  message: string
+  id: MultiQuestionType
+  type: "multi"
+  options: { value: string; label: string }[]
+}
+
+export type Question = RadioQuestion | MultiQuestion
 
 export type Answer =
   | { id: RadioQuestionType; type: "radio"; value?: string; severity?: number }
