@@ -15,7 +15,7 @@ const Container = styled.div`
   }
 `
 
-const NotFoundPage = () => (
+const NotFoundPage = ({ location }: { location: Location }) => (
   <Layout location={location}>
     <SEO title="Ressources" />
     <h1>Ressources</h1>

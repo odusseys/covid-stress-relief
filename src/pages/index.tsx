@@ -27,7 +27,7 @@ const Right = styled.section`
   flex-direction: column;
 `
 
-const IndexPage = () => (
+const IndexPage = ({ location }: { location: Location }) => (
   <Layout location={location}>
     <SEO title="Home" />
     <h1>Welcome to Calm</h1>
