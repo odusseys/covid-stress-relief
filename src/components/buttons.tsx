@@ -9,6 +9,7 @@ export const Button = styled.button<{ aspect?: ButtonType }>`
   align-items: center;
   justify-content: center;
   border: none;
+  white-space: nowrap;
   background: transparent;
   cursor: pointer;
   box-shadow: rgba(19, 45, 74, 0.12) 0px 0px 0px 0px,

@@ -11,6 +11,7 @@ const BAD_NEWS_SOURCES = [
 export function getRecommendations(
   answers: Answer[]
 ): Partial<Record<Recommendation, true>> {
+  console.log(answers)
   const res: Partial<Record<Recommendation, true>> = {}
   for (const a of answers) {
     if (a.value) {
@@ -22,16 +23,16 @@ export function getRecommendations(
           if (a.severity! > 0) res[Recommendation.ISOLATION] = true
           break
         case QuestionType.SICK:
-          if (a.severity! > 0) res[Recommendation.DIAGNOSIS] = true
+          if (a.severity! > 1) res[Recommendation.DIAGNOSIS] = true
           break
         case QuestionType.PHYSICAL:
-          if (a.severity! > 0) res[Recommendation.PHYSICAL] = true
+          if (a.severity! <= 1) res[Recommendation.PHYSICAL] = true
           break
         case QuestionType.SLEEP:
           if (a.severity! > 0) res[Recommendation.SLEEP] = true
           break
         case QuestionType.RHYTHM:
-          if (a.severity! > 0) res[Recommendation.RHYTHM] = true
+          if (a.severity! <= 0) res[Recommendation.RHYTHM] = true
           break
         case QuestionType.NEWS:
           if (BAD_NEWS_SOURCES.some(n => a.value![n]))

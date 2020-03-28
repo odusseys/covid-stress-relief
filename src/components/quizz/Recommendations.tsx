@@ -410,12 +410,11 @@ export default function Recommendations({
 }: {
   recommendations: Set<Recommendation>
 }) {
-  console.log(Object.values(Recommendation), recommendations)
   return (
     <div>
       {recommendations.size > 0 ? (
         <>
-          <h2>Ressources recommandées pour vous</h2>
+          <h2>🌟 Ressources recommandées pour vous</h2>
           <div>
             {[...recommendations].map(r => (
               <RecommendationItem recommendation={r} key={r} defaultOpen />
@@ -423,13 +422,16 @@ export default function Recommendations({
           </div>
         </>
       ) : (
-        <p style={{ paddingBottom: 32 }}>
-          Il semblerait que vous n'ayez pas trop de difficultés avec la
+        <p style={{ paddingBottom: 32, fontWeight: 600, fontSize: 14 }}>
+          👌 Il semblerait que vous n'ayez pas trop de difficultés avec la
           situation actuelle, tant mieux ! Voici quelques ressources qui
           pourraient tout de même vous intéresser pour les temps à venir.
         </p>
       )}
-      <h2>Ressources supplémentaires</h2>
+      <hr style={{ marginTop: 16 }} />
+      <h3 style={{ marginTop: 16, marginBottom: 16 }}>
+        Ressources supplémentaires
+      </h3>
       <AdditionalResources>
         {Object.values(Recommendation)
           .filter(i => !recommendations.has(i))

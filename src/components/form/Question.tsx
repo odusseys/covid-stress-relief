@@ -4,13 +4,19 @@ import styled from "styled-components"
 import RadioField from "./RadioField"
 import { Question as QuestionType, Answer } from "../../helpers/types"
 import MultiSelectField from "./MultiSelectField"
+import Item from "../Item"
 
-const QuestionContainer = styled.div`
+const Container = styled(Item)`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: calc(100% - 32px);
+  max-width: 600px;
 `
 
-const QuestionTitle = styled.h2``
+const QuestionTitle = styled.h2`
+  margin-bottom: 32px !important;
+`
 
 export default function Question({
   question,
@@ -22,7 +28,7 @@ export default function Question({
   value: Answer
 }) {
   return (
-    <>
+    <Container>
       <QuestionTitle>{question.message}</QuestionTitle>
       {question.type === "radio" ? (
         <RadioField
@@ -50,6 +56,6 @@ export default function Question({
           }
         />
       )}
-    </>
+    </Container>
   )
 }

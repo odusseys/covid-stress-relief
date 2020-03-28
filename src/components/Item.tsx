@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components"
 
 const Item = styled.div<{ small?: boolean }>`
-  padding: ${({ small }) => (small ? "8px" : "16px")};
+  padding: 16px;
   border-radius: 8px;
   border: 1px solid #dfe1e5;
+  background: white;
   h2 {
     font-weight: 600;
     margin-bottom: ${({ small }) => (small ? "8px" : "16px")};

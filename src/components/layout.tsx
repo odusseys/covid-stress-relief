@@ -5,7 +5,7 @@ import styled, { ThemeProvider } from "styled-components"
 import "./layout.css"
 import { Link } from "gatsby-plugin-intl"
 
-const Header = styled.header`
+const Title = styled.header`
   height: 80px;
   display: flex;
   justify-content: center;
@@ -21,9 +21,19 @@ const Header = styled.header`
   }
 `
 
+const Header = styled.div`
+  background-color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+`
+
 const DEFAUT_THEME = {
   colors: {
     primary: "#169af2",
+    background: "rgba(35, 119, 188, 0.06)",
     secondary: "rgb(22, 22, 29)",
     secondary70: "rgba(22, 22, 29, 0.7)",
     secondary8: "rgba(22, 22, 29, 0.08)",
@@ -33,6 +43,13 @@ const Contents = styled.div`
   display: flex;
   flex: 1;
   padding: 32px 32px 0 32px;
+
+  @media (min-width: 1000px) {
+    align-self: center;
+    width: 1000px;
+    max-width: 1000px;
+  }
+
   * {
     font-size: 13px;
   }
@@ -61,6 +78,7 @@ const Contents = styled.div`
 
   li {
     margin-left: 16px;
+    margin-bottom: 4px;
     position: relative;
     &:before {
       position: absolute;
@@ -72,6 +90,12 @@ const Contents = styled.div`
       border-radius: 2px;
       background: ${({ theme }) => theme.colors.primary};
     }
+  }
+
+  hr {
+    background-color: ${({ theme }) => theme.colors.secondary8};
+    border-color: ${({ theme }) => theme.colors.secondary8};
+    color: ${({ theme }) => theme.colors.secondary8};
   }
 
   @media (max-width: 600px) {
@@ -97,6 +121,7 @@ const Contents = styled.div`
 `
 
 const Nav = styled.nav`
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,23 +129,10 @@ const Nav = styled.nav`
 `
 
 const MainContainer = styled.div`
-  position: relative;
   flex: 1;
-  align-self: stretch;
-  @media (max-width: 600px) {
-    max-height: initial;
-    overflow-y: initial;
-  }
 `
 
 const Main = styled.main`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
   flex: 1;
   @media (max-width: 600px) {
     max-height: initial;
@@ -134,8 +146,11 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  padding-top: 132px;
+  background: ${({ theme }) => theme.colors.background};
 `
 
 const NavItemContainer = styled.div`
@@ -144,7 +159,7 @@ const NavItemContainer = styled.div`
     color: initial;
     display: flex;
     text-align: center;
-    padding: 8px 16px;
+    padding: 16px;
     position: relative;
     &:after {
       content: "";
@@ -170,16 +185,7 @@ const NavItemContainer = styled.div`
   }
 `
 
-const NavItem = ({
-  to,
-  name,
-  location,
-}: {
-  to: string
-  name: string
-  location: Location
-}) => {
-  console.log(location.pathname, to)
+const NavItem = ({ to, name }: { to: string; name: string }) => {
   return (
     <NavItemContainer>
       <Link
@@ -196,26 +202,22 @@ const NavItem = ({
   )
 }
 
-const Layout = ({
-  children,
-  location,
-}: {
-  children: ReactNode
-  location: Location
-}) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <ThemeProvider theme={DEFAUT_THEME}>
       <Wrapper>
         <Header>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            CALM
-          </Link>
+          <Title>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              Confinés mais contents
+            </Link>
+          </Title>
+          <Nav>
+            <NavItem to="/" name="🏠 Accueil" />
+            <NavItem to="/quizz" name="❔ Questionnaire" />
+            <NavItem to="/resources" name="📚 Ressources" />
+          </Nav>
         </Header>
-        <Nav>
-          <NavItem to="/" name="🏠 Accueil" location={location} />
-          <NavItem to="/quizz" name="❔ Questionnaire" location={location} />
-          <NavItem to="/resources" name="📚 Ressources" location={location} />
-        </Nav>
         <Contents>
           <MainContainer>
             <Main>{children}</Main>

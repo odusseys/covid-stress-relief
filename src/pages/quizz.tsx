@@ -7,9 +7,9 @@ import { getRecommendations } from "../helpers/recommendations"
 import { navigate } from "gatsby-plugin-intl"
 import qs from "query-string"
 
-const QuizzPage = ({ location }: { location: Location }) => {
+const QuizzPage = () => {
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO title="Quizz" />
       <Quizz
         onComplete={answers => {

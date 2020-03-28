@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import { Recommendation } from "../helpers/types"
 import { RecommendationItem } from "../components/quizz/Recommendations"
+import { Link } from "gatsby-plugin-intl"
+import Sticky from "../components/Sticky"
 
 const Container = styled.div`
   display: flex;
@@ -13,13 +15,23 @@ const Container = styled.div`
   & > * {
     margin: 16px;
   }
+  @media (max-width: 600px) {
+    margin: -8px;
+    & > * {
+      margin: 8px;
+    }
+  }
 `
 
 const NotFoundPage = ({ location }: { location: Location }) => (
-  <Layout location={location}>
+  <Layout>
     <SEO title="Ressources" />
     <h1>Ressources</h1>
+    <Link to="/quizz" style={{ marginBottom: 8, display: "block" }}>
+      Cliquez ici pour des recommandations de ressources personnalisées.
+    </Link>
     <Container>
+      <Sticky />
       {Object.values(Recommendation).map(r => (
         <RecommendationItem recommendation={r} defaultOpen={false} />
       ))}

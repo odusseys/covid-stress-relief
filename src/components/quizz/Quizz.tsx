@@ -120,11 +120,9 @@ const PaginationItem = styled.div`
 const Pagination = ({
   left,
   right,
-  middle,
 }: {
   left?: ReactNode
   right?: ReactNode
-  middle?: ReactNode
 }) => {
   return (
     <PaginationContainer>
@@ -132,7 +130,7 @@ const Pagination = ({
         {left}
       </PaginationItem>
       <PaginationItem style={{ margin: "0 32px", flex: "initial" }}>
-        {middle}
+        <span />
       </PaginationItem>
       <PaginationItem>{right}</PaginationItem>
     </PaginationContainer>
@@ -150,14 +148,6 @@ const Quizz = ({ onComplete }: { onComplete: (answers: Answer[]) => void }) => {
       <span />
     ) : (
       <Button onClick={() => setIndex(index - 1)}>Question précédente</Button>
-    )
-  const middle =
-    index === QUESTIONS.length - 1 ? (
-      <span />
-    ) : (
-      <Button onClick={() => setIndex(index + 1)} aspect="plain">
-        Ignorer
-      </Button>
     )
   const right =
     index === QUESTIONS.length - 1 ? (
@@ -182,7 +172,7 @@ const Quizz = ({ onComplete }: { onComplete: (answers: Answer[]) => void }) => {
           setAnswers(res)
         }}
       />
-      <Pagination {...{ left, middle, right }} />
+      <Pagination {...{ left, right }} />
     </Container>
   )
 }
