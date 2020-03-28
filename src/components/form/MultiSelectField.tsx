@@ -11,7 +11,11 @@ type Value = Record<string, boolean>
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin: -8px -16px;
+  @media (max-width: 600px) {
+    justify-content: space-between;
+  }
 `
 
 const Label = styled.label`

@@ -15,20 +15,23 @@ type RecoComponent = FC<{ short: boolean }>
 const CovidTest: RecoComponent = ({ short }) => {
   return (
     <>
-      <h2>Inquièt-e d'avoir le COVID-19 ?</h2>
+      <h2>😷 Inquièt-e d'avoir le COVID-19 ?</h2>
       <p>
-        Le gouvernement fournit une application gratuite pour obtenir des
-        informations de premier niveau sur le COVID-19 et fluidifier la prise en
-        charge des personnes par les services d’urgences pendant l'épidémie.
+        Le gouvernement fournit un{" "}
+        <strong>
+          outil gratuit pour évaluer le risque d'avoir contracté COVID-19
+        </strong>{" "}
+        et fluidifier la prise en charge des personnes par les services
+        d’urgences pendant l'épidémie.
       </p>
       {!short && (
         <>
           <Row>
             <p>
-              Attention, l'exhaustivité, l'exactitude, le caractère à jour des
-              informations et contenus mis à disposition dans cette application,
-              ou leur adéquation à des finalités particulières, ne sont pas
-              garantis.
+              ❗ Attention, l'exhaustivité, l'exactitude, le caractère à jour
+              des informations et contenus mis à disposition dans cette
+              application, ou leur adéquation à des finalités particulières, ne
+              sont pas garantis.
             </p>
           </Row>
           <OutLink href="https://maladiecoronavirus.fr/se-tester">
@@ -43,7 +46,7 @@ const CovidTest: RecoComponent = ({ short }) => {
 const NewsSources: RecoComponent = ({ short }) => {
   return (
     <>
-      <h2>Evitez la surcharge d'informations</h2>
+      <h2>📰 Eviter la surcharge d'informations</h2>
       <p>
         Il est facile, en particulier en état de confinement, d'être submergé
         d'informations concernant la pandémie.
@@ -52,33 +55,40 @@ const NewsSources: RecoComponent = ({ short }) => {
       {!short && (
         <>
           <p>
-            Il est important de ne pas passer un temps excessif à consommer
-            l'information, et de se limiter à quelques sources fiables. En
+            Il est important de{" "}
+            <strong>
+              ne pas passer un temps excessif à consommer l'information
+            </strong>{" "}
+            , et de se limiter à <strong>quelques sources fiables</strong>. En
             particulier: veilez à éviter de passer trop de temps ou d'obtenir
             vos informations par:
           </p>
           <ul>
             <li>
-              Les réseaux sociaux (ils sont remplis de fausses informations et
-              d'informations anxiogènes)
+              ❌ Les <strong>réseaux sociaux</strong> (ils sont remplis de
+              fausses informations et d'informations anxiogènes)
             </li>
-            <li>Les chaînes d'information en continu</li>
-            <li>Les live-feeds de sites de presse en ligne</li>
             <li>
-              Le bouche à oreille, propice aux informations fausses ou
-              déformées. Il est très bénéfique de rester très connecté avec ses
-              proches ; mais évitez de trop discuter de l'actualité, qui est
-              anxiogène
+              ❌ Les <strong>chaînes d'information en continu</strong>
+            </li>
+            <li>
+              ❌ Les <strong>live-feeds</strong> de sites de presse en ligne
+            </li>
+            <li>
+              ❌ Le <strong>bouche à oreille</strong> , propice aux informations
+              fausses ou déformées. Il est très bénéfique de rester très
+              connecté avec ses proches ; mais évitez de trop discuter de
+              l'actualité, qui est anxiogène
             </li>
           </ul>
           <p>Il est conseillé de leur privilégier:</p>
           <ul>
             <li>
-              Les journaux papier (les kiosques à journeaux demeurent ouverts
+              ✅ Les journaux papier (les kiosques à journeaux demeurent ouverts
               malgré le confinement !)
             </li>
-            <li>Les journaux TV (13h, 20h, ...)</li>
-            <li>Les sites officiels (voir ci-dessous)</li>
+            <li>✅ Les journaux TV (13h, 20h, ...)</li>
+            <li>✅ Les sites officiels (voir ci-dessous)</li>
           </ul>
           <p>
             Le gouvernement fournit &nbsp;
@@ -95,7 +105,7 @@ const NewsSources: RecoComponent = ({ short }) => {
 const PhysicalResources: RecoComponent = ({ short }) => {
   return (
     <>
-      <h2>Essayez de maintenir une activité physique</h2>
+      <h2>🏃‍♂️ Maintenir une activité physique</h2>
       <p>
         Il est recommandé de maintenir une activité physique régulière malgré le
         confinement
@@ -113,8 +123,12 @@ const PhysicalResources: RecoComponent = ({ short }) => {
           <ul>
             <li>
               Faites quelques minutes de marche et d’étirements, à l’intérieur
-              ou dans votre jardin,*au minimum toutes les 2 heures passées en
-              position assise ou allongée.
+              ou dans votre jardin,{" "}
+              <strong>
+                au minimum toutes les 2 heures passées en position assise ou
+                allongée
+              </strong>
+              .
             </li>
             <li>
               Essayez vous au renforcement musculaire qui ne nécessite presque
@@ -123,14 +137,14 @@ const PhysicalResources: RecoComponent = ({ short }) => {
               les chaînes musculaires de votre corps.
             </li>
             <li>
-              Nettoyer, astiquer, balayer…les tâches ménagères sont des
-              activités physiques : essayez d’y mettre plus d’énergie que
-              d’habitude, cela renforcera vos muscles et vous fera peut-être
+              Nettoyer, astiquer, balayer… les <strong>tâches ménagères</strong>
+               sont des activités physiques : essayez d’y mettre plus d’énergie
+              que d’habitude, cela renforcera vos muscles et vous fera peut-être
               transpirer.
             </li>
             <li>
-              4. Si vous disposez d’une cour ou d’un jardin individuel, rendez
-              le propice aux activités physiques, ou faites un potager.
+              Si vous disposez d’une cour ou d’un jardin individuel, rendez le
+              propice aux activités physiques, ou faites un potager.
             </li>
           </ul>
           <h3>Quelques ressources pour vous aider</h3>
@@ -165,7 +179,7 @@ const PhysicalResources: RecoComponent = ({ short }) => {
 const RhythmTips: RecoComponent = ({ short }) => {
   return (
     <>
-      <h2>Conserver un rythme de vie</h2>
+      <h2>⏲ Conserver un rythme de vie</h2>
       <p>
         Il est recommandé de maintenir un rythme de vie quotidien le plus proche
         possible de ses habitudes
@@ -173,16 +187,16 @@ const RhythmTips: RecoComponent = ({ short }) => {
       {!short && (
         <>
           <ul>
-            <li>Se lever et se coucher à heures fixes</li>
-            <li>Prendre sa douche tous les matins</li>
-            <li>S'habiller comme pour une journée habituelle</li>
-            <li>Manger à heures fixes</li>
+            <li>🛌 Se lever et se coucher à heures fixes</li>
+            <li>🚿 Prendre sa douche tous les matins</li>
+            <li>👕S'habiller comme pour une journée habituelle</li>
+            <li>🍽 Manger à heures fixes</li>
             <li>
-              Faire régulièrement le ménage, la vaisselle, la lessive, ....
+              🧹 Faire régulièrement le ménage, la vaisselle, la lessive, ....
             </li>
           </ul>
           <p>
-            Il peut être très utile de vous aider d'un agenda (papier ou
+            Il peut être très utile de vous aider d'un agenda 📓 (papier ou
             virtuel) afin de vous aider à programmer et ritualiser ces moments.
           </p>
         </>
@@ -194,7 +208,7 @@ const RhythmTips: RecoComponent = ({ short }) => {
 const IsolationTips: RecoComponent = ({ short }) => {
   return (
     <>
-      <h2>Combattre l'isolation</h2>
+      <h2>👨‍👨‍👧‍👧 Combattre l'isolation</h2>
       <p>
         Il est recommandé de garder un contact régulier avec ses proches, sa
         famille et ses collègues
@@ -253,7 +267,7 @@ const IsolationTips: RecoComponent = ({ short }) => {
 const ActivitiesTips: RecoComponent = ({ short }) => {
   return (
     <>
-      <h2>S'occuper avec des activités</h2>
+      <h2>🎨 S'occuper avec des activités</h2>
       <p>
         Afin de vaincre l'ennui et la frustration du confinement, il est
         recommandé de s'occuper avec des activités.
@@ -310,7 +324,7 @@ const ActivitiesTips: RecoComponent = ({ short }) => {
 const SleepingTips: RecoComponent = ({ short }) => {
   return (
     <>
-      <h3>Trouver le sommeil</h3>
+      <h2>😴Trouver le sommeil</h2>
       <p>
         Le confinement ne fait pas bon ménage avec le sommeil. Stress, angoisse,
         changement de rythme, manque d’activité…
@@ -399,12 +413,22 @@ export default function Recommendations({
   console.log(Object.values(Recommendation), recommendations)
   return (
     <div>
-      <h2>Ressources recommandées pour vous</h2>
-      <div>
-        {[...recommendations].map(r => (
-          <RecommendationItem recommendation={r} key={r} defaultOpen />
-        ))}
-      </div>
+      {recommendations.size > 0 ? (
+        <>
+          <h2>Ressources recommandées pour vous</h2>
+          <div>
+            {[...recommendations].map(r => (
+              <RecommendationItem recommendation={r} key={r} defaultOpen />
+            ))}
+          </div>
+        </>
+      ) : (
+        <p style={{ paddingBottom: 32 }}>
+          Il semblerait que vous n'ayez pas trop de difficultés avec la
+          situation actuelle, tant mieux ! Voici quelques ressources qui
+          pourraient tout de même vous intéresser pour les temps à venir.
+        </p>
+      )}
       <h2>Ressources supplémentaires</h2>
       <AdditionalResources>
         {Object.values(Recommendation)

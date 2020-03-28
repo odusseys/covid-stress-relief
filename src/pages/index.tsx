@@ -30,23 +30,25 @@ const Right = styled.section`
 const IndexPage = ({ location }: { location: Location }) => (
   <Layout location={location}>
     <SEO title="Home" />
-    <h1>Welcome to Calm</h1>
+    <h1>Bienvenue </h1>
     <h2>
-      Calm gives you the tools to make the current health situation less
-      stressful
+      Vous trouverez ici une collection de conseils et ressources
+      individualisées
     </h2>
     <Container>
       <Left>
         <Sticky />
       </Left>
       <Right>
-        <h3>Ressources personnalisées</h3>
+        <h3 style={{ fontSize: 16, marginBottom: 16 }}>
+          🌟 Ressources personnalisées
+        </h3>
         <p style={{ maxWidth: 600, marginBottom: 32 }}>
           Le questionnaire suivant vous permettra d'identifier les ressources
           les mieux adaptées à votre cas individuel, afin de surmonter au mieux
           la situation actuelle
         </p>
-        <Link to="quizz">
+        <Link to="quizz" style={{ textDecoration: "none" }}>
           <Button aspect="primary">Essayer le questionnaire</Button>
         </Link>
       </Right>

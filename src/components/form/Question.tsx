@@ -22,7 +22,7 @@ export default function Question({
   value: Answer
 }) {
   return (
-    <QuestionContainer>
+    <>
       <QuestionTitle>{question.message}</QuestionTitle>
       {question.type === "radio" ? (
         <RadioField
@@ -50,6 +50,6 @@ export default function Question({
           }
         />
       )}
-    </QuestionContainer>
+    </>
   )
 }
