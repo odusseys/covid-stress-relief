@@ -11,7 +11,7 @@ const Title = styled.header`
   justify-content: center;
   align-items: center;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   * {
     color: ${({ theme }) => theme.colors.primary};
   }
@@ -33,10 +33,11 @@ const Header = styled.div`
 const DEFAUT_THEME = {
   colors: {
     primary: "#169af2",
-    background: "rgba(35, 119, 188, 0.06)",
+    background: "rgba(35, 119, 188, 0.03)",
     secondary: "rgb(22, 22, 29)",
     secondary70: "rgba(22, 22, 29, 0.7)",
     secondary8: "rgba(22, 22, 29, 0.08)",
+    secondary3: "rgba(22, 22, 29, 0.03)",
   },
 }
 const Contents = styled.div`
@@ -44,10 +45,10 @@ const Contents = styled.div`
   flex: 1;
   padding: 32px 32px 0 32px;
 
-  @media (min-width: 1000px) {
+  @media (min-width: 800px) {
     align-self: center;
-    width: 1000px;
-    max-width: 1000px;
+    width: 800px;
+    max-width: 800px;
   }
 
   * {
@@ -209,7 +210,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Header>
           <Title>
             <Link to="/" style={{ textDecoration: "none" }}>
-              Confinés mais contents
+              mon confinement
             </Link>
           </Title>
           <Nav>

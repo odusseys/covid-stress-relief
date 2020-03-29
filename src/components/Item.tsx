@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components"
 
-const Item = styled.div<{ small?: boolean }>`
+const Item = styled.div<{ small?: boolean; hoverable?: boolean }>`
   padding: 16px;
   border-radius: 8px;
-  border: 1px solid #dfe1e5;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   background: white;
   h2 {
     font-weight: 600;
@@ -19,6 +19,14 @@ const Item = styled.div<{ small?: boolean }>`
       max-width: 200px;
       @media (max-width: 600px) {
         max-width: initial;
+      }
+    `}
+  ${({ hoverable, theme }) =>
+    hoverable &&
+    css`
+      cursor: pointer;
+      &:hover {
+        background: ${theme.colors.secondary3};
       }
     `}
 `

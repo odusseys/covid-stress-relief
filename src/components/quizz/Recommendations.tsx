@@ -10,6 +10,48 @@ const Row = styled.div`
   align-items: center;
 `
 
+const AppImage = styled.img`
+  width: 120px;
+  max-width: 120px;
+  border-radius: 4px;
+  &:hover {
+    opacity: 0.8;
+  }
+  @media (max-width: 600px) {
+    width: 80px;
+    max-width: 80px;
+  }
+`
+
+const App = ({
+  href,
+  src,
+  background,
+}: {
+  href: string
+  src: string
+  background?: string
+}) => {
+  return (
+    <OutLink href={href}>
+      <AppImage src={src} style={{ background }} />
+    </OutLink>
+  )
+}
+
+const Apps = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  & > :not(:last-child) {
+    margin-right: 32px;
+    @media (max-width: 600px) {
+      margin-right: 16px;
+    }
+  }
+`
+
 type RecoComponent = FC<{ short: boolean }>
 
 const CovidTest: RecoComponent = ({ short }) => {
@@ -152,12 +194,21 @@ const PhysicalResources: RecoComponent = ({ short }) => {
             Utilisez des plateformes numériques gratuites et sous haut patronage
             du ministere des sports
           </p>
-          <div>TBD APPS HERE</div>
-          <p>
-            Les applications suivantes vous permettront également de faire du
-            sport à la maison
-          </p>
-          <div>TBD APPS HERE</div>
+          <Apps>
+            <App
+              href="https://www.activiti.fr/app/"
+              src="https://www.activiti.fr/img/activiti-logo.svg"
+            />
+            <App
+              href="https://www.about.besport.com/"
+              src="https://static.wixstatic.com/media/96773c_b2bd57415bae49c89e44826a388b39ff~mv2.png/v1/crop/x_0,y_21,w_1000,h_398/fill/w_191,h_75,al_c,q_85,usm_0.66_1.00_0.01/Be%20Sport_ff0040%20(1).webp"
+            />
+            <App
+              background="#3d2683"
+              href="https://www.goove.fr/"
+              src="https://www.goove.app/themes/custom/goove_app/img/logo/logo-negate-more.svg"
+            />
+          </Apps>
           <p>
             Vous retrouverez également ici{" "}
             <OutLink href="https://www.limousin-sport-sante.fr/upload/tests_documents_educateurs/LSS_doc_renforcement_muscu.pdf">
@@ -337,24 +388,36 @@ const SleepingTips: RecoComponent = ({ short }) => {
             dormir sur ses deux oreilles pendant l’épidémie.
           </p>
           <ul>
-            <li>Penser à pratiquer une activité physique durant la journée</li>
             <li>
-              Réserver la chambre à coucher au seul sommeil (ou activités
-              sexuelles), en n'aucun cas utiliser de smartphone, PC ou pratiquer
-              d'autres activités stimulantes dans le lit.
+              Penser à pratiquer une activité physique 🏃‍♀️ durant la journée
             </li>
-            <li>Se coucher et se lever à heures fixes</li>
+            <li>
+              Réserver la chambre à coucher au seul sommeil 😴 (ou activités
+              sexuelles 🙈), en n'aucun cas utiliser de smartphone, PC ou
+              pratiquer d'autres activités stimulantes dans le lit.
+            </li>
+            <li>Se coucher et se lever à heures fixes ⏲</li>
             <li>
               Eviter les activités trop stimulantes (sport, écrans ...) avant le
-              coucher. Un peu de lecture ou un bain chaud peuvent aider à
+              coucher. Un peu de lecture 📖 ou un bain chaud 🛀 peuvent aider à
               préparer au sommeil.
             </li>
             <li>
-              Mediter et se détendre en journée. Les applications ci-dessous
+              Mediter 🧘‍♀️ et se détendre en journée. Les applications ci-dessous
               vous permettront d'apprendre rapidement les bases de cett pratique
-              de relaxation
+              de relaxation. La méditation et la relaxation peut également se
+              pratiquer pour atteindre le sommeil, le soir.
             </li>
-            <div>TBD APPS</div>
+            <Apps>
+              <App
+                src="https://medias.petitbambou.com/newsite/assets/PbbLogoSmall.png"
+                href="https://www.petitbambou.com/fr/"
+              />
+              <App
+                href="https://www.headspace.com/fr/"
+                src="https://www.headspace.com/static/images/logo.svg"
+              />
+            </Apps>
             <p>
               Retrouvez d'autres conseils sur le site de{" "}
               <OutLink href="https://www.passeportsante.net/fr/Actualites/Dossiers/DossierComplexe.aspx?doc=astuces-mieux-dormir-naturellement">

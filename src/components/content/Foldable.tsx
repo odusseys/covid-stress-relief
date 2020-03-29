@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from "react"
 import Item from "../Item"
 import { Button } from "../buttons"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { FaPlus, FaMinus } from "react-icons/fa"
 
 const CTA = styled.div`
@@ -26,9 +26,14 @@ export default function Foldable({
 }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
-    <Container small={!open}>
+    <Container
+      small={!open}
+      hoverable={!open}
+      onClick={() => {
+        !open && setOpen(true)
+      }}
+    >
       <div>{open ? long : short}</div>
-
       <CTA>
         <Button aspect="plain" onClick={() => setOpen(!open)}>
           Voir {open ? "moins" : "plus"}{" "}

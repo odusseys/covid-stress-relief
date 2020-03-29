@@ -31,10 +31,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        fonts: [`open sans\:300,400,400i,500,600,700`],
-        display: "swap",
+        fonts: [
+          {
+            family: `Nunito`,
+            variants: ["300", "400", "400i", "500", "600", "700"],
+          },
+        ],
       },
     },
     {

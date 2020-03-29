@@ -18,12 +18,16 @@ const Container = styled.div`
   }
 `
 
-const Left = styled.section``
+const Left = styled.section`
+  max-width: 500px;
+`
 
 const Right = styled.section`
   flex: 1;
   margin-left: 32px;
   @media (max-width: 600px) {
+    margin-left: 0;
+    margin-top: 16px;
   }
 `
 

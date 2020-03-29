@@ -2,11 +2,12 @@ import React from "react"
 import Item from "./Item"
 import OutLink from "./OutLink"
 import Foldable from "./content/Foldable"
+import styled from "styled-components"
 
 const Definition = ({ short }: { short: boolean }) => {
   return (
     <>
-      <h2>Qu'est-ce que le COVID-19 ?</h2>
+      <h2>❔ Qu'est-ce que le COVID-19 ?</h2>
       <p>
         Depuis janvier 2020 une épidémie de Coronavirus, nommée COVID-19 s’est
         propagée depuis la Chine.
@@ -34,6 +35,7 @@ const Definition = ({ short }: { short: boolean }) => {
             respirer peut survenir.
           </p>
           <img
+            style={{ maxWidth: 300 }}
             src="https://www.gouvernement.fr/sites/default/files/cimages/signes_symptomes_symptomes.png"
             alt="symptômes"
           />
@@ -54,7 +56,10 @@ const Definition = ({ short }: { short: boolean }) => {
             aussi le transfert de virus depuis des parties du corps (mains ...)
             contaminées.
           </p>
-          <img src="https://www.gouvernement.fr/sites/default/files/cimages/transmission_moins_1_metre.png" />
+          <img
+            style={{ maxWidth: 300 }}
+            src="https://www.gouvernement.fr/sites/default/files/cimages/transmission_moins_1_metre.png"
+          />
           <h3>Prévention</h3>
           <p>
             Afin de minimiser vos chances de tomber malade, ou de contaminer les
@@ -79,6 +84,13 @@ const Definition = ({ short }: { short: boolean }) => {
   )
 }
 
+const AttestationContainer = styled(Item)`
+  max-width: 200px;
+  @media (max-width: 600px) {
+    max-width: initial;
+  }
+`
+
 export default function Sticky() {
   return (
     <>
@@ -86,13 +98,13 @@ export default function Sticky() {
         long={<Definition short={false} />}
         short={<Definition short />}
       />
-      <Item>
-        <h2>Attestation de déplacement</h2>
+      <AttestationContainer>
+        <h2>📜 Attestation de déplacement</h2>
         <p>Une attestation est obligatoire pour tous les déplacements.</p>
         <OutLink href="https://www.interieur.gouv.fr/Actualites/L-actu-du-Ministere/Attestation-de-deplacement-derogatoire-et-justificatif-de-deplacement-professionnel">
           Vous la trouverez sur le site du Ministère en suivant ce lien.
         </OutLink>
-      </Item>
+      </AttestationContainer>
     </>
   )
 }
