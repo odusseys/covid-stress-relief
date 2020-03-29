@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Covid side project`,
+    title: `mon confinement`,
     description: `Des outils individualisés pour tenir bon face à l'épidémie de COVID-19`,
     author: ``,
   },
@@ -27,7 +27,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/Twemoji12_1f9d8-1f3fb-200d-2642-fe0f.svg`, // This path is relative to the root of the site.
       },
     },
     {

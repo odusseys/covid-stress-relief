@@ -2,8 +2,10 @@ import React, { FC } from "react"
 
 import { Recommendation } from "../../helpers/types"
 import Foldable from "../content/Foldable"
+import ItemList from "../content/ItemList"
 import styled from "styled-components"
 import OutLink from "../OutLink"
+import Share from "../Share"
 
 const Row = styled.div`
   display: flex;
@@ -459,30 +461,22 @@ export const RecommendationItem = ({
   )
 }
 
-const AdditionalResources = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: -16px;
-  & > * {
-    margin: 16px;
-  }
-`
-
 export default function Recommendations({
   recommendations,
 }: {
   recommendations: Set<Recommendation>
 }) {
   return (
-    <div>
+    <div style={{ position: "relative" }}>
+      <Share />
       {recommendations.size > 0 ? (
         <>
           <h2>🌟 Ressources recommandées pour vous</h2>
-          <div>
+          <ItemList>
             {[...recommendations].map(r => (
               <RecommendationItem recommendation={r} key={r} defaultOpen />
             ))}
-          </div>
+          </ItemList>
         </>
       ) : (
         <p style={{ paddingBottom: 32, fontWeight: 600, fontSize: 14 }}>
@@ -495,7 +489,7 @@ export default function Recommendations({
       <h3 style={{ marginTop: 16, marginBottom: 16 }}>
         Ressources supplémentaires
       </h3>
-      <AdditionalResources>
+      <ItemList>
         {Object.values(Recommendation)
           .filter(i => !recommendations.has(i))
           .map(r => (
@@ -505,7 +499,7 @@ export default function Recommendations({
               defaultOpen={false}
             />
           ))}
-      </AdditionalResources>
+      </ItemList>
     </div>
   )
 }

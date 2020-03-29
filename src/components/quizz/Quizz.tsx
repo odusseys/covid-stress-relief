@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { Answer, Question, QuestionType } from "../../helpers/types"
 import QuestionComponent from "../../components/form/Question"
 import { Button } from "../buttons"
+import { FaArrowLeft, FaArrowRight, FaClipboardList } from "react-icons/fa"
 
 const Container = styled.div`
   display: flex;
@@ -98,6 +99,12 @@ const QUESTIONS: Question[] = [
   {
     id: QuestionType.BORED,
     type: "radio" as const,
+    message: "Vous ennuyez-vous, ou vous sentez-vous frustré ?",
+    options: SEVERITY_OPTIONS,
+  },
+  {
+    id: QuestionType.SLEEP,
+    type: "radio" as const,
     message: "Avez vous du mal à dormir ?",
     options: YES_NO_OPTIONS,
   },
@@ -137,26 +144,38 @@ const Pagination = ({
   )
 }
 
+const INITIAL_ANSWERS: Answer[] = QUESTIONS.map(q => {
+  if (q.type === "radio")
+    return {
+      id: q.id,
+      type: "radio",
+      severity: q.options[0].severity,
+      value: q.options[0].value,
+    }
+  return { id: q.id, type: "multi", value: {} }
+})
+
 const Quizz = ({ onComplete }: { onComplete: (answers: Answer[]) => void }) => {
-  const [answers, setAnswers] = useState<Answer[]>(
-    QUESTIONS.map(({ id, type }) => ({ id, type } as any))
-  )
+  const [answers, setAnswers] = useState<Answer[]>(INITIAL_ANSWERS)
   const [index, setIndex] = useState(0)
   const question = QUESTIONS[index]
   const left =
     index === 0 ? (
       <span />
     ) : (
-      <Button onClick={() => setIndex(index - 1)}>Question précédente</Button>
+      <Button onClick={() => setIndex(index - 1)}>
+        <FaArrowLeft style={{ marginRight: 8 }} />
+        Question précédente{" "}
+      </Button>
     )
   const right =
     index === QUESTIONS.length - 1 ? (
       <Button onClick={() => onComplete(answers)} aspect="primary">
-        Résultats
+        Résultats <FaClipboardList style={{ marginLeft: 8 }} />
       </Button>
     ) : (
       <Button aspect="primary" onClick={() => setIndex(index + 1)}>
-        Question suivante
+        Question suivante <FaArrowRight style={{ marginLeft: 8 }} />
       </Button>
     )
 

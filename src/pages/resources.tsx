@@ -7,6 +7,7 @@ import { Recommendation } from "../helpers/types"
 import { RecommendationItem } from "../components/quizz/Recommendations"
 import { Link } from "gatsby-plugin-intl"
 import Sticky from "../components/Sticky"
+import Share from "../components/Share"
 
 const Container = styled.div`
   display: flex;
@@ -23,10 +24,11 @@ const Container = styled.div`
   }
 `
 
-const NotFoundPage = ({ location }: { location: Location }) => (
+const NotFoundPage = () => (
   <Layout>
     <SEO title="Ressources" />
-    <h1>Ressources</h1>
+    <h1 style={{ marginBottom: 8 }}>Ressources</h1>
+    <Share />
     <Link to="/quizz" style={{ marginBottom: 8, display: "block" }}>
       Cliquez ici pour des recommandations de ressources personnalisées.
     </Link>

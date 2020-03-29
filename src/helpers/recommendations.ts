@@ -17,7 +17,7 @@ export function getRecommendations(
     if (a.value) {
       switch (a.id) {
         case QuestionType.BORED:
-          if (a.severity! > 0) res[Recommendation.ACTIVITIES] = true
+          if (a.severity! > 1) res[Recommendation.ACTIVITIES] = true
           break
         case QuestionType.ISOLATION:
           if (a.severity! > 0) res[Recommendation.ISOLATION] = true

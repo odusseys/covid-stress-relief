@@ -10,7 +10,7 @@ import qs from "query-string"
 const QuizzPage = () => {
   return (
     <Layout>
-      <SEO title="Quizz" />
+      <SEO title="Questionnaire" />
       <Quizz
         onComplete={answers => {
           const reco = getRecommendations(answers)

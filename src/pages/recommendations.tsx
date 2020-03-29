@@ -10,8 +10,8 @@ const QuizzPage = ({ location }: { location: Location }) => {
   const reco = qs.parse(location.search)
   const recommendations = new Set(Object.keys(reco)) as Set<Recommendation>
   return (
-    <Layout location={location}>
-      <SEO title="Recommendations" />
+    <Layout>
+      <SEO title="Recommandations" />
       <Recommendations recommendations={recommendations} />
     </Layout>
   )

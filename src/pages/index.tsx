@@ -6,27 +6,23 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import { Button } from "../components/buttons"
 import Item from "../components/Item"
+import { FaArrowRight } from "react-icons/fa"
+import Share from "../components/Share"
 
 const Container = styled.div`
   display: flex;
-  align-items: stretch;
-  margin-right: 32px;
-  @media (max-width: 600px) {
-    flex-direction: column;
-    margin-bottom: 16px;
-    margin-right: 0;
-  }
+  align-items: center;
+  flex-direction: column;
 `
 
 const Left = styled.section`
-  max-width: 500px;
+  max-width: 600px;
 `
 
 const Right = styled.section`
-  flex: 1;
-  margin-left: 32px;
+  max-width: 600px;
+  margin-top: 32px;
   @media (max-width: 600px) {
-    margin-left: 0;
     margin-top: 16px;
   }
 `
@@ -47,16 +43,18 @@ const Top = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <Top>
-      <h1>Bienvenue </h1>
-      <h2>
-        Vous trouverez ici une collection de conseils et ressources
-        individualisées
-      </h2>
-    </Top>
+    <SEO title="Accueil" />
 
     <Container>
+      <Top>
+        <h1>Bienvenue </h1>
+        <h2>Pour diminuer son stress pendant cette période de confinement</h2>
+        <p>
+          Vous trouverez ici des ressources simples et pratiques, recommandées
+          exprès pour vous
+        </p>
+        <Share />
+      </Top>
       <Left>
         <RightItem>
           <h3 style={{ fontSize: 16, marginBottom: 16 }}>
@@ -68,7 +66,10 @@ const IndexPage = () => (
             mieux la situation actuelle
           </p>
           <Link to="/quizz" style={{ textDecoration: "none" }}>
-            <Button aspect="primary">Essayer le questionnaire</Button>
+            <Button aspect="primary">
+              Essayer le questionnaire{" "}
+              <FaArrowRight style={{ marginLeft: 8 }} />
+            </Button>
           </Link>
         </RightItem>
       </Left>
