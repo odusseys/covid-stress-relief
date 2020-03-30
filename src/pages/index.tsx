@@ -23,9 +23,17 @@ const Left = styled.section`
 
 const Right = styled.section`
   max-width: 600px;
-  margin-top: 32px;
+  margin-left: 32px;
   @media (max-width: 600px) {
+    margin-left: 0;
     margin-top: 16px;
+  }
+`
+
+const Main = styled.div`
+  display: flex;
+  @media (max-width: 600px) {
+    flex-direction: column;
   }
 `
 
@@ -48,35 +56,36 @@ const IndexPage = () => (
     <SEO title="Mon Confinement" />
     <Container>
       <Top>
-        <h1>Bienvenue </h1>
-        <h2>Diminuez votre stress pendant cette période de confinement</h2>
-        <p>
+        <h1>Diminuez votre stress pendant cette période de confinement</h1>
+        <h2>
           Vous trouverez ici des ressources simples et pratiques, recommandées
           exprès pour vous
-        </p>
+        </h2>
       </Top>
-      <Left>
-        <RightItem>
-          <h3 style={{ fontSize: 16, marginBottom: 16 }}>
-            🌟 Ressources personnalisées
-          </h3>
-          <p style={{ maxWidth: 600, marginBottom: 32 }}>
-            Le questionnaire suivant vous permettra d'identifier les ressources
-            les mieux adaptées à votre cas individuel, afin de surmonter au
-            mieux la situation actuelle
-          </p>
-          <Link to="/quizz" style={{ textDecoration: "none" }}>
-            <Button aspect="primary">
-              Essayer le questionnaire{" "}
-              <FaArrowRight style={{ marginLeft: 8 }} />
-            </Button>
-          </Link>
-        </RightItem>
-      </Left>
-      <Share />
-      <Right>
-        <CompanyPrompt />
-      </Right>
+      <Main>
+        <Left>
+          <CompanyPrompt />
+          <Share />
+        </Left>
+        <Right>
+          <RightItem recommended>
+            <h3 style={{ fontSize: 16, marginBottom: 16 }}>
+              🌟 Ressources personnalisées
+            </h3>
+            <p style={{ maxWidth: 600, marginBottom: 32 }}>
+              Le questionnaire suivant vous permettra d'identifier les
+              ressources les mieux adaptées à votre cas individuel, afin de
+              surmonter au mieux la situation actuelle
+            </p>
+            <Link to="/quizz" style={{ textDecoration: "none" }}>
+              <Button aspect="primary">
+                Essayer le questionnaire{" "}
+                <FaArrowRight style={{ marginLeft: 8 }} />
+              </Button>
+            </Link>
+          </RightItem>
+        </Right>
+      </Main>
     </Container>
   </Layout>
 )
