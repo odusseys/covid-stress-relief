@@ -49,7 +49,7 @@ module.exports = {
         // supported language
         languages: [`fr`],
         // language file path
-        defaultLanguage: `en`,
+        defaultLanguage: `fr`,
         redirect: true,
       },
     },
