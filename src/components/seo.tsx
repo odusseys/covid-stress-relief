@@ -21,7 +21,7 @@ function SEO({
   meta: any
   title: string
 }) {
-  const { site } = useStaticQuery(
+  const { site, placeholderImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -33,12 +33,23 @@ function SEO({
             siteUrl
           }
         }
+        placeholderImage: file(relativePath: { eq: "logo.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1500) {
+              ...GatsbyImageSharpFluid
+            }
+            resize(width: 900, quality: 90) {
+              src
+            }
+          }
+        }
       }
     `
   )
 
   const metaDescription = description || site.siteMetadata.description
-  console.log(site)
+
+  const img = placeholderImage.childImageSharp.resize.src
   return (
     <Helmet
       htmlAttributes={{
@@ -65,7 +76,7 @@ function SEO({
         },
         {
           property: `og:image`,
-          content: `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`,
+          content: `${img}`,
         },
         {
           name: `twitter:card`,

@@ -3,7 +3,7 @@ module.exports = {
     title: `mon confinement`,
     description: `Des outils individualisés pour tenir bon face à l'épidémie de COVID-19`,
     author: ``,
-    image: "/images/Twemoji12_1f9d8-1f3fb-200d-2642-fe0f.svg",
+    image: "/images/logo.png",
     siteUrl: "https://mon-confinement.com",
   },
   plugins: [
@@ -29,7 +29,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/Twemoji12_1f9d8-1f3fb-200d-2642-fe0f.svg`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
     {
