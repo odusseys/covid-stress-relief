@@ -133,11 +133,8 @@ const Pagination = ({
 }) => {
   return (
     <PaginationContainer>
-      <PaginationItem style={{ justifyContent: "flex-end" }}>
+      <PaginationItem style={{ justifyContent: "flex-end", marginRight: 16 }}>
         {left}
-      </PaginationItem>
-      <PaginationItem style={{ margin: "0 32px", flex: "initial" }}>
-        <span />
       </PaginationItem>
       <PaginationItem>{right}</PaginationItem>
     </PaginationContainer>

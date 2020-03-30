@@ -26,14 +26,14 @@ const Right = styled.section`
   margin-left: 32px;
   @media (max-width: 600px) {
     margin-left: 0;
-    margin-top: 16px;
+    margin-bottom: 16px;
   }
 `
 
 const Main = styled.div`
   display: flex;
   @media (max-width: 600px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `
 
