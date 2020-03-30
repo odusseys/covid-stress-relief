@@ -181,7 +181,7 @@ const Quizz = ({ onComplete }: { onComplete: (answers: Answer[]) => void }) => {
 
   return (
     <Container>
-      <h1>Questionaire</h1>
+      <h1>Questionnaire</h1>
       <QuestionComponent
         value={answers[index]}
         question={question}

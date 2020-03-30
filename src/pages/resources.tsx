@@ -35,7 +35,7 @@ const NotFoundPage = () => (
     <Container>
       <Sticky />
       {Object.values(Recommendation).map(r => (
-        <RecommendationItem recommendation={r} defaultOpen={false} />
+        <RecommendationItem recommendation={r} recommended={false} />
       ))}
     </Container>
   </Layout>

@@ -104,8 +104,8 @@ const NewsSources: RecoComponent = ({ short }) => {
               ne pas passer un temps excessif à consommer l'information
             </strong>{" "}
             , et de se limiter à <strong>quelques sources fiables</strong>. En
-            particulier: veilez à éviter de passer trop de temps ou d'obtenir
-            vos informations par:
+            particulier : veillez à éviter de passer trop de temps ou d'obtenir
+            vos informations par
           </p>
           <ul>
             <li>
@@ -125,14 +125,14 @@ const NewsSources: RecoComponent = ({ short }) => {
               l'actualité, qui est anxiogène
             </li>
           </ul>
-          <p>Il est conseillé de leur privilégier:</p>
+          <p>Il est conseillé de privilégier :</p>
           <ul>
             <li>
-              ✅ Les journaux papier (les kiosques à journeaux demeurent ouverts
+              ✅ Les journaux papier (les kiosques à journaux demeurent ouverts
               malgré le confinement !)
             </li>
             <li>✅ Les journaux TV (13h, 20h, ...)</li>
-            <li>✅ Les sites officiels (voir ci-dessous)</li>
+            <li>✅ Le sites officiels (voir ci-dessous pour un exemple)</li>
           </ul>
           <p>
             Le gouvernement fournit &nbsp;
@@ -219,7 +219,7 @@ const PhysicalResources: RecoComponent = ({ short }) => {
           </p>
           <p>
             Retrouvez également de multiples conseils{" "}
-            <OutLink href="http://www.sports.gouv.fr/accueil-du-site/actualites/article/avec-le-ministere-des-sports-faire-du-sport-chez-soi-c-est-facile](http://www.sports.gouv.fr/accueil-du-site/actualites/article/avec-le-ministere-des-sports-faire-du-sport-chez-soi-c-est-facile">
+            <OutLink href="http://www.sports.gouv.fr/accueil-du-site/actualites/article/avec-le-ministere-des-sports-faire-du-sport-chez-soi-c-est-facile">
               sur le site du ministère
             </OutLink>
           </p>
@@ -261,15 +261,15 @@ const RhythmTips: RecoComponent = ({ short }) => {
 const IsolationTips: RecoComponent = ({ short }) => {
   return (
     <>
-      <h2>👨‍👨‍👧‍👧 Combattre l'isolation</h2>
+      <h2>👨‍👨‍👧‍👧 Combattre l'isolement</h2>
       <p>
         Il est recommandé de garder un contact régulier avec ses proches, sa
-        famille et ses collègues
+        famille et ses collègues.
       </p>
       {!short && (
         <>
           <p>
-            faisant des appels ou de visioconférences à plusieurs et à heures
+            Faites des appels ou de visioconférences à plusieurs et à heures
             fixes avec un café ou à l'heure du repas pour les partager ensemble.
           </p>
           <p>
@@ -279,7 +279,7 @@ const IsolationTips: RecoComponent = ({ short }) => {
           <h3>Les plateformes pour communiquer</h3>
           <p>
             Parmi les plateformes les plus utilisées pour communiquer en
-            vidioconférence:
+            vidioconférence :
           </p>
           <ul>
             <li>Zoom</li>
@@ -331,7 +331,7 @@ const ActivitiesTips: RecoComponent = ({ short }) => {
           <ul>
             <li>
               Lire en piochant dans sa bibliothèque ou sur Kindle. De nombreux
-              distributeurs offrent des e-books gratuitement: &nbsp;
+              distributeurs offrent des e-books gratuitement : &nbsp;
               <OutLink href="https://livre.fnac.com/n309183/Tous-les-Ebooks-gratuits">
                 Fnac
               </OutLink>
@@ -350,12 +350,12 @@ const ActivitiesTips: RecoComponent = ({ short }) => {
               .
             </li>
             <li>
-              Regarder des films et des séries télé. De nombreuses chaînes
+              Regarder des films 🎬 et des séries télé. De nombreuses chaînes
               offrent leur contenu gratuitement (OCS, Arte, Canal+...)
             </li>
-            <li>Ecouter de la musique, des podcasts ou la radio </li>
+            <li>Ecouter de la musique 🎼, des podcasts ou la radio </li>
             <li>
-              Faire des activités manuelles (couture, peinture, dessin,
+              Faire des activités manuelles 🛠 (couture, peinture, dessin,
               menuiserie, bricolage, ...)
             </li>
             <li>
@@ -363,10 +363,30 @@ const ActivitiesTips: RecoComponent = ({ short }) => {
               matériel !).
             </li>
             <li>
-              Participer virtuellement à des activités culturelles (musées,
-              opéra, ballet...){" "}
+              Participer virtuellement à des activités culturelles, comme{" "}
+              <OutLink href="http://www.leparisien.fr/culture-loisirs/le-louvre-van-gogh-5-musees-a-parcourir-virtuellement-depuis-votre-salon-22-03-2020-8285418.php">
+                des visites virtuelles de musées 🗿
+              </OutLink>{" "}
+              ou encore de{" "}
+              <OutLink href="https://www.sciencesetavenir.fr/decouvrir/7-visites-virtuelles-a-faire-malgre-le-confinement-contre-l-epidemie-de-coronavirus_142555">
+                musées scientifiques et d'histoire naturelle 🧪
+              </OutLink>
+              , ou encore{" "}
+              <OutLink href="https://www.roh.org.uk/news/the-royal-opera-house-launches-a-programme-of-free-online-content-for-the-culturally-curious-at-home">
+                des ballets et opéras.
+              </OutLink>
+              . Le{" "}
+              <OutLink href="https://www.culture.gouv.fr/Culturecheznous">
+                site du ministère de la culture
+              </OutLink>{" "}
+              référence également une multitude de contenus virtuels.
             </li>
-            <li>S'éduquer en suivant des MOOCs </li>
+            <li>
+              S'éduquer 👨‍🎓 en suivant des cours gratuits en ligne, par exemple
+              sur <OutLink href="https://www.udemy.com/">Udemy</OutLink> ,{" "}
+              <OutLink href="https://www.coursera.org/">Coursera</OutLink>,{" "}
+              <OutLink href="https://www.edx.org/">edX</OutLink>
+            </li>
           </ul>
         </>
       )}
@@ -395,7 +415,7 @@ const SleepingTips: RecoComponent = ({ short }) => {
             </li>
             <li>
               Réserver la chambre à coucher au seul sommeil 😴 (ou activités
-              sexuelles 🙈), en n'aucun cas utiliser de smartphone, PC ou
+              sexuelles 🙈), en aucun cas utiliser de smartphone, PC ou
               pratiquer d'autres activités stimulantes dans le lit.
             </li>
             <li>Se coucher et se lever à heures fixes ⏲</li>
@@ -406,9 +426,9 @@ const SleepingTips: RecoComponent = ({ short }) => {
             </li>
             <li>
               Mediter 🧘‍♀️ et se détendre en journée. Les applications ci-dessous
-              vous permettront d'apprendre rapidement les bases de cett pratique
-              de relaxation. La méditation et la relaxation peut également se
-              pratiquer pour atteindre le sommeil, le soir.
+              vous permettront d'apprendre rapidement les bases de cette
+              pratique de relaxation. La méditation et la relaxation peuvent
+              également se pratiquer pour atteindre le sommeil, le soir.
             </li>
             <Apps>
               <App
@@ -445,16 +465,17 @@ const RECO_COMPONENTS: Record<Recommendation, RecoComponent> = {
 
 export const RecommendationItem = ({
   recommendation,
-  defaultOpen,
+  recommended,
 }: {
   recommendation: Recommendation
-  defaultOpen: boolean
+  recommended: boolean
 }) => {
   const RecoComp = RECO_COMPONENTS[recommendation]
   return (
     <Foldable
+      recommended={recommended}
       key={recommendation}
-      defaultOpen={defaultOpen}
+      defaultOpen={false}
       short={<RecoComp short />}
       long={<RecoComp short={false} />}
     />
@@ -474,7 +495,7 @@ export default function Recommendations({
           <h2>🌟 Ressources recommandées pour vous</h2>
           <ItemList>
             {[...recommendations].map(r => (
-              <RecommendationItem recommendation={r} key={r} defaultOpen />
+              <RecommendationItem recommendation={r} key={r} recommended />
             ))}
           </ItemList>
         </>
@@ -485,21 +506,25 @@ export default function Recommendations({
           pourraient tout de même vous intéresser pour les temps à venir.
         </p>
       )}
-      <hr style={{ marginTop: 16 }} />
-      <h3 style={{ marginTop: 16, marginBottom: 16 }}>
-        Ressources supplémentaires
-      </h3>
-      <ItemList>
-        {Object.values(Recommendation)
-          .filter(i => !recommendations.has(i))
-          .map(r => (
-            <RecommendationItem
-              recommendation={r as Recommendation}
-              key={r}
-              defaultOpen={false}
-            />
-          ))}
-      </ItemList>
+      {recommendations.size < Object.values(Recommendation).length && (
+        <>
+          <hr style={{ marginTop: 16 }} />
+          <h3 style={{ marginTop: 16, marginBottom: 16 }}>
+            Ressources supplémentaires
+          </h3>
+          <ItemList>
+            {Object.values(Recommendation)
+              .filter(i => !recommendations.has(i))
+              .map(r => (
+                <RecommendationItem
+                  recommendation={r as Recommendation}
+                  key={r}
+                  recommended={false}
+                />
+              ))}
+          </ItemList>
+        </>
+      )}
     </div>
   )
 }

@@ -1,9 +1,18 @@
 import styled, { css } from "styled-components"
 
-const Item = styled.div<{ small?: boolean; hoverable?: boolean }>`
+const Item = styled.div<{
+  small?: boolean
+  hoverable?: boolean
+  recommended?: boolean
+}>`
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  ${({ recommended }) =>
+    recommended &&
+    css`
+      border: 2px #ffdb3b9c solid;
+    `}
   background: white;
   h2 {
     font-weight: 600;

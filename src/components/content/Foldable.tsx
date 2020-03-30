@@ -19,14 +19,17 @@ export default function Foldable({
   short,
   long,
   defaultOpen = false,
+  recommended = false,
 }: {
   short: ReactNode
   long: ReactNode
   defaultOpen?: boolean
+  recommended?: boolean
 }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
     <Container
+      recommended={recommended}
       small={!open}
       hoverable={!open}
       onClick={() => {

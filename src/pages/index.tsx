@@ -47,7 +47,7 @@ const IndexPage = () => (
     <Container>
       <Top>
         <h1>Bienvenue </h1>
-        <h2>Pour diminuer son stress pendant cette période de confinement</h2>
+        <h2>Diminuez votre stress pendant cette période de confinement</h2>
         <p>
           Vous trouverez ici des ressources simples et pratiques, recommandées
           exprès pour vous
