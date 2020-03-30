@@ -40,6 +40,13 @@ export const Button = styled.button<{ aspect?: ButtonType }>`
     }
   }}
 
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.7;
+      cursor: not-allowed;
+    `}
+
   &:hover {
     filter: brightness(0.9);
   }

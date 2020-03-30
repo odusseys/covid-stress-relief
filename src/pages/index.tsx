@@ -8,11 +8,13 @@ import { Button } from "../components/buttons"
 import Item from "../components/Item"
 import { FaArrowRight } from "react-icons/fa"
 import Share from "../components/Share"
+import CompanyPrompt from "../components/content/CompanyPrompt"
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 32px;
 `
 
 const Left = styled.section`
@@ -72,15 +74,8 @@ const IndexPage = () => (
         </RightItem>
       </Left>
       <Share />
-
       <Right>
-        <Item>
-          <h3>Toutes les ressources</h3>
-          <p>
-            Toutes les ressources, y compris un lien vers l'attestation à
-            imprimer, <Link to="/resources">sont disponibles ici</Link>
-          </p>
-        </Item>
+        <CompanyPrompt />
       </Right>
     </Container>
   </Layout>

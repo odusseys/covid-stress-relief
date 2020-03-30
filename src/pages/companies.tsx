@@ -3,13 +3,9 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import { Recommendation } from "../helpers/types"
-import { RecommendationItem } from "../components/quizz/Recommendations"
-import { Link } from "gatsby-plugin-intl"
-import Sticky from "../components/Sticky"
-import Share from "../components/Share"
 import { Button } from "../components/buttons"
 import axios from "axios"
+import { Link } from "gatsby-plugin-intl"
 
 const Container = styled.div`
   display: flex;
@@ -59,6 +55,7 @@ const Form = ({ onComplete }: { onComplete: () => void }) => {
   const [name, setName] = useState<string>()
   const [company, setCompany] = useState<string>()
   const [role, setRole] = useState<string>(ROLES[0].name)
+  const [auth, setAuth] = useState(false)
   return (
     <FormContainer
       onSubmit={async e => {
@@ -108,8 +105,30 @@ const Form = ({ onComplete }: { onComplete: () => void }) => {
           ))}
         </select>
       </Field>
+      <div
+        style={{
+          marginBottom: 16,
+          fontWeight: 600,
+          display: "flex",
+        }}
+      >
+        <input
+          id="cgu-checkbox"
+          type="checkbox"
+          checked={auth}
+          onChange={e => setAuth(e.target.checked)}
+          style={{ marginRight: 8 }}
+        />
+        <label htmlFor="cgu-checkbox">
+          J'autorise mon-confinement.com à collecter les données ci-dessus et ai
+          pris connaissance de la{" "}
+          <Link to="/cgu" target="_blank">
+            politique de protection des données
+          </Link>
+        </label>
+      </div>
       <Button
-        disabled={loading}
+        disabled={loading || !auth}
         aspect="primary"
         style={{ alignSelf: "flex-end" }}
       >

@@ -6,6 +6,7 @@ import ItemList from "../content/ItemList"
 import styled from "styled-components"
 import OutLink from "../OutLink"
 import Share from "../Share"
+import CompanyPrompt from "../content/CompanyPrompt"
 
 const Row = styled.div`
   display: flex;
@@ -491,24 +492,25 @@ export default function Recommendations({
     <div style={{ position: "relative" }}>
       <Share />
       {recommendations.size > 0 ? (
-        <>
+        <div style={{ marginBottom: 16 }}>
           <h2>🌟 Ressources recommandées pour vous</h2>
           <ItemList>
             {[...recommendations].map(r => (
               <RecommendationItem recommendation={r} key={r} recommended />
             ))}
           </ItemList>
-        </>
+        </div>
       ) : (
         <p style={{ paddingBottom: 32, fontWeight: 600, fontSize: 14 }}>
           👌 Il semblerait que vous n'ayez pas trop de difficultés avec la
-          situation actuelle, tant mieux ! Voici quelques ressources qui
-          pourraient tout de même vous intéresser pour les temps à venir.
+          situation actuelle, tant mieux ! Vous trouverez plus bas quelques
+          ressources qui pourraient tout de même vous intéresser pour les temps
+          à venir.
         </p>
       )}
+      <CompanyPrompt />
       {recommendations.size < Object.values(Recommendation).length && (
         <>
-          <hr style={{ marginTop: 16 }} />
           <h3 style={{ marginTop: 16, marginBottom: 16 }}>
             Ressources supplémentaires
           </h3>
