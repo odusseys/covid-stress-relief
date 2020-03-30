@@ -29,11 +29,9 @@ function SEO({
             title
             description
             author
-            image
-            siteUrl
           }
         }
-        placeholderImage: file(relativePath: { eq: "logo.png" }) {
+        placeholderImage: file(relativePath: { eq: "ogimage.png" }) {
           childImageSharp {
             fluid(maxWidth: 1500) {
               ...GatsbyImageSharpFluid
