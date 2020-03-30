@@ -36,7 +36,8 @@ export default function Foldable({
         !open && setOpen(true)
       }}
     >
-      <div>{open ? long : short}</div>
+      <div style={{ display: open ? "none" : "block" }}>{short}</div>
+      <div style={{ display: open ? "block" : "none" }}>{long}</div>
       <CTA>
         <Button aspect="plain" onClick={() => setOpen(!open)}>
           Voir {open ? "moins" : "plus"}{" "}

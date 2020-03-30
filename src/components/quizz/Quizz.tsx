@@ -179,15 +179,20 @@ const Quizz = ({ onComplete }: { onComplete: (answers: Answer[]) => void }) => {
   return (
     <Container>
       <h1>Questionnaire</h1>
-      <QuestionComponent
-        value={answers[index]}
-        question={question}
-        onChange={a => {
-          const res = [...answers]
-          res[index] = a
-          setAnswers(res)
-        }}
-      />
+      {QUESTIONS.map((question, i) => (
+        <div style={{ display: index === i ? "block" : "none" }}>
+          <QuestionComponent
+            value={answers[index]}
+            question={question}
+            onChange={a => {
+              const res = [...answers]
+              res[index] = a
+              setAnswers(res)
+            }}
+          />
+        </div>
+      ))}
+
       <Pagination {...{ left, right }} />
     </Container>
   )
