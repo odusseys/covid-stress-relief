@@ -6,13 +6,19 @@ import styled from "styled-components"
 import { Button } from "../components/buttons"
 import axios from "axios"
 import { Link } from "gatsby-plugin-intl"
+import Item from "../components/Item"
 
-const Container = styled.div`
+const Container = styled(Item)`
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 400px;
   margin: auto;
+  padding: 32px;
+  @media (max-width: 600px) {
+    padding: 16px;
+  }
+  margin-bottom: 32px;
 `
 
 const ENDPOINT = "https://t64zrlz3ci.execute-api.eu-west-3.amazonaws.com/prod"
