@@ -73,7 +73,7 @@ function SEO({
           content: `website`,
         },
         {
-          property: `og:image:secure_url`,
+          property: `og:image`,
           content: `${img}`,
         },
         {
