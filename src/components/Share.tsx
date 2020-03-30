@@ -56,7 +56,7 @@ const Container = styled.div`
 const TITLE = "Mon Confinement"
 
 const QUOTE =
-  "Quelques ressources personnalisées, bien utiles en ces temps compliqués !"
+  "Quelques ressources personnalisées, bien utiles pour tenir bon face au confinement !"
 
 const URL = "https://www.mon-confinement.com"
 

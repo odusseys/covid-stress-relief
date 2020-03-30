@@ -19,6 +19,9 @@ const Container = styled.div`
 
 const Left = styled.section`
   max-width: 600px;
+  button {
+    transform: scale(1.2) translateY(-8px);
+  }
 `
 
 const Right = styled.section`
@@ -26,14 +29,14 @@ const Right = styled.section`
   margin-left: 32px;
   @media (max-width: 600px) {
     margin-left: 0;
-    margin-bottom: 16px;
+    margin-top: 16px;
   }
 `
 
 const Main = styled.div`
   display: flex;
   @media (max-width: 600px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 `
 
@@ -64,10 +67,6 @@ const IndexPage = () => (
       </Top>
       <Main>
         <Left>
-          <CompanyPrompt />
-          <Share />
-        </Left>
-        <Right>
           <RightItem recommended>
             <h3 style={{ fontSize: 16, marginBottom: 16 }}>
               🌟 Ressources personnalisées
@@ -84,6 +83,10 @@ const IndexPage = () => (
               </Button>
             </Link>
           </RightItem>
+        </Left>
+        <Right>
+          <CompanyPrompt />
+          <Share />
         </Right>
       </Main>
     </Container>
