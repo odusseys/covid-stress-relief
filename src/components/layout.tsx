@@ -101,7 +101,7 @@ const Contents = styled.div`
 
   @media (max-width: 600px) {
     flex-direction: column;
-    padding: 16px 16px 0 16px;
+    padding: 16px 24px 0 24px;
     font-size: 11px;
 
     h1 {
@@ -151,6 +151,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 132px;
+  @media (max-width: 600px) {
+    padding-top: 112px;
+  }
   background: ${({ theme }) => theme.colors.background};
 `
 
@@ -182,6 +185,12 @@ const NavItemContainer = styled.div`
       &:hover {
         opacity: 0.8;
       }
+    }
+  }
+  @media (max-width: 600px) {
+    font-size: 80%;
+    a {
+      padding: 8px;
     }
   }
 `
@@ -217,6 +226,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
             <NavItem to="/" name="🏠 Accueil" />
             <NavItem to="/quizz" name="❔ Questionnaire" />
             <NavItem to="/resources" name="📚 Ressources" />
+            <NavItem to="/companies" name="🏭 Entreprises" />
           </Nav>
         </Header>
         <Contents>

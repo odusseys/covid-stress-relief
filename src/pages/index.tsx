@@ -43,8 +43,7 @@ const Top = styled.div`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Accueil" />
-
+    <SEO title="Mon Confinement" />
     <Container>
       <Top>
         <h1>Bienvenue </h1>
@@ -53,7 +52,6 @@ const IndexPage = () => (
           Vous trouverez ici des ressources simples et pratiques, recommandées
           exprès pour vous
         </p>
-        <Share />
       </Top>
       <Left>
         <RightItem>
@@ -73,6 +71,8 @@ const IndexPage = () => (
           </Link>
         </RightItem>
       </Left>
+      <Share />
+
       <Right>
         <Item>
           <h3>Toutes les ressources</h3>
