@@ -128,9 +128,9 @@ const Form = ({ onComplete }: { onComplete: () => void }) => {
         <label htmlFor="cgu-checkbox">
           J'autorise mon-confinement.com à collecter les données ci-dessus et ai
           pris connaissance de la{" "}
-          <Link to="/cgu" target="_blank">
+          <a href="/cgu" target="_blank">
             politique de protection des données
-          </Link>
+          </a>
         </label>
       </div>
       <Button
